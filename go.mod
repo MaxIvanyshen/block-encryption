@@ -1,3 +1,3 @@
-module "github.com/MaxIvanyshen/block-encryption"
+module block-encryptoin
 
 go 1.22.3

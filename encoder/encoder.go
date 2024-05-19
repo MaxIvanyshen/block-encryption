@@ -10,8 +10,8 @@ import (
 )
 
 type Encoder interface {
-    Encode() []byte
-    Decode() []byte
+    Encode(data []byte) []byte
+    Decode(data []byte) []byte
 }
 
 type RSAEncoder struct {

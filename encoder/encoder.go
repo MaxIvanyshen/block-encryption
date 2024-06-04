@@ -91,10 +91,7 @@ func(decoder *RSAEncoder) Decode(data []byte) ([]byte, error) {
 func chunkGenerator(done chan interface{}, bytes []byte, bits int) <-chan []byte {
     stream := make(chan []byte)
 
-    chunkSize := int(math.Floor(float64(bits / 8)))
-    if chunkSize == 0 {
-        chunkSize = 1
-    }
+    chunkSize := int(math.Round(float64(bits / 8)))
 
     go func() {
         defer close(stream)
